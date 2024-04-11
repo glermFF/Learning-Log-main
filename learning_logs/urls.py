@@ -4,9 +4,13 @@ from django.urls import path
 
 from . import views
 
-app_name = 'learing_logs'
+app_name = 'learning_logs'
 
 urlpatterns = [
-    #HomePage
-    path('', views.index, name='index')
+    # HomePage
+    path('', views.index, name='index'),
+    # Topics Page
+    path('topics/', views.topics, name='topics'),
+    # Detailed page for each topic
+    path('topics/<str:topic_id>/', views.topic, name='topic')
 ]
