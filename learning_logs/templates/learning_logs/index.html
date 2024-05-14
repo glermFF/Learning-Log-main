@@ -1,18 +1,21 @@
 {% extends "learning_logs/base.html" %}
 
+<!-- Recomendo usar um block para os titulos -->
+{%block title%} Index | {% endblock title %}
+
 {% block content %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Learning Log</title>
-</head>
-<body>
-    <section id="title">
+
+    <!-- Como tudo vai estar ja dentro de um html, voce nao precisa definir as coisas novamente, apenas
+        Oque vai haver dentro dos bloco, como por exemplo o titulo, o conteudo, etc.        
+    
+    -->
+
+    <section id="title" align="centered" class="learning-log-title">
         <p>Learning Log helps you to keep track of your learning process.</p>
+        
     </section>
+
+
 </body>
 </html>
 {% endblock content %}

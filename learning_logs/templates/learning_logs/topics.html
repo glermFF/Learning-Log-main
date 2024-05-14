@@ -1,27 +1,23 @@
 {% extends "learning_logs/base.html" %}
 
-{% block content %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Topics</title>
-</head>
-<body>
-    <p>Topics</p>
+{% block title %} Topics | {% endblock title %}
 
-    <ul>
-        {% for topic in topics %}
+
+{% block content %}
+
+<ul>
+    <h1>Topics</h1> <!-- Isso deveria estar dentro de um section -->
+    <hr>
+    {% for topic in topics %}
         <li>
             <a href="{% url 'learning_logs:topic' topic.id %}">{{topic}}</a>
+            <hr>
         </li>
         {% empty %}
-        <li>No topics added yat</li>
-        {% endfor %}
-    </ul>
+        <li>No topics added yet</li> 
+    {% endfor %}
+    <a href="{% url 'learning_logs:new_topic' %}">Add new Topic</a>  <!-- Isso deveria estar dentro de um section -->
+</ul>
 
-    <a href="{% url 'learning_logs:new_topic' %}">Add new Topic</a>
-</body>
-</html>
+
 {% endblock content %}
